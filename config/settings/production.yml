@@ -1,6 +1,6 @@
 mindvalley:
   accounts:
-    api:      http://accounts.mvstg.com/
+    api:      https://accounts.mindvalley.com/
     key:      dr6PkK1xOxwT2a70cZcDJFZjVefR1UHQxyFcJcB1
     secret:   YHfpOzqI6Lmcg4rXYQDdlrFR2nF0Bk4q6xaEc784
   chargebee:
