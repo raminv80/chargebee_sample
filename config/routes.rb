@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       scope '/chargebee' do
-        get '/:secret', to: 'chargebee#event_listener', defaults: {format: 'json'}
+        post '/:secret', to: 'chargebee#event_listener', defaults: {format: 'json'}
       end
     end
   end
