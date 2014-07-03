@@ -1,8 +1,5 @@
 Rails.application.configure do
 
-  ENV["CHARGEBEE_SITE"]="mindvalleytest-test"
-  ENV["CHARGEBEE_API_KEY"]="test_BKgZWuZFIz5np9D8HBucukFIfsAv8OTAn"
-  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

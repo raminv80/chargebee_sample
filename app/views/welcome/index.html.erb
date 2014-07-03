@@ -7,4 +7,24 @@
   <%=link_to logout_path, 'logout' %>
   <% end %>
 </p>
-<h3>Subscription info</h3>
+<h3>Landing page info</h3>
+  
+  <% if !@basicPageUrl.nil? %>
+  <p>Subscribe to this app!</p>
+  <ul>
+    <li><%= link_to 'Subscribe Now to Basic plan for as low as 0.10$ per month!', @basicPageUrl %></li>
+    <!--<li><a href="https://mindvalleytest-test.chargebee.com/hosted_pages/plans/basic">subscribe</a> to basic plan at 0.1$ per month!</li>-->
+  </ul>
+  <% end %>
+
+  <% if @subscriptions.present? %>
+    <p>You are subscribd to following plans:</p>
+    <ul>
+      <% @subscriptions.each do |subscription| %>
+      <li><strong>Plan name</strong>: <%= subscription[:subscription].plan_id.capitalize %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<hr>
+<%=link_to 'list of subscriptions', admin_subscriptions_path %> |
+<%=link_to 'list of events', admin_chargebee_events_path %>

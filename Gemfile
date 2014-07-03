@@ -17,20 +17,24 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :assets do
-    gem 'sass-rails', '~> 4.0.3'
-    gem 'coffee-rails', '~> 4.0.0'
-    gem 'uglifier', '>= 1.3.0'
+  gem 'sass-rails', '~> 4.0.3'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'uglifier', '>= 1.3.0'
 end
 
-group :development do
-    gem 'spring'
-    gem 'quiet_assets'
-    gem 'pry-rails'
-    gem 'looksee'
-    gem 'awesome_print'
-    gem "better_errors"
-    gem "binding_of_caller"
-    gem 'hirb'
+group :development, :test do
+  gem 'pry-rails'
+  gem 'spring'
+  gem 'quiet_assets'
+  gem 'looksee'
+  gem 'awesome_print'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'hirb'
+end
+
+group :test, :development do
+    gem 'rspec-rails', '~> 3.0.0'
 end
 
 gem 'rails_config'
@@ -52,3 +56,5 @@ gem 'chargebee'
 
 gem 'omniauth'
 gem 'omniauth-mindvalley', '>= 0.0.8', :git => 'git://github.com/mindvalley/omniauth-mindvalley.git'
+
+gem 'rocket_pants', '~> 1.0'
