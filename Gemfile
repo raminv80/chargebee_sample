@@ -52,3 +52,5 @@ gem 'chargebee'
 
 gem 'omniauth'
 gem 'omniauth-mindvalley', '>= 0.0.8', :git => 'git://github.com/mindvalley/omniauth-mindvalley.git'
+
+gem 'rocket_pants', '~> 1.0'

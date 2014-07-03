@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   get "logout"  => "sessions#destroy",    :as => "logout"
   get "signup"  => "users#new",           :as => "signup"
   get '/auth/mindvalley/callback', to: 'sessions#create'
+
+  namespace :api do
+    namespace :v1 do
+      scope '/chargebee' do
+        get '/:secret', to: 'chargebee#event_listener', defaults: {format: 'json'}
+      end
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
