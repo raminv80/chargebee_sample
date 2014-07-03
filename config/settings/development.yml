@@ -1,0 +1,11 @@
+mindvalley:
+  accounts:
+    api:      http://accounts.mvstg.com/
+    key:      fSbol7pAPrCM4qgEmrbfWqGZCwYr7SY0i0XSmxmf
+    secret:   MndRL5ey7csovPpsIc2ddiQNBb3GcnQucW4D2cHE
+  chargebee:
+    #define a shared secret for webhook security
+    shared_secret: 'testchargebe3'
+    #get from chargebee site
+    SITE: "mindvalleytest-test"
+    API_KEY: "test_BKgZWuZFIz5np9D8HBucukFIfsAv8OTAn"
