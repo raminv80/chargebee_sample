@@ -8,6 +8,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
+  # username: mindvalley
+  # password: 
+  host: localhost
+  port: 5432
 
 development:
   <<: *default

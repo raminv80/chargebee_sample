@@ -1,18 +1,10 @@
 source 'https://rubygems.org'
 
-ruby "2.1.1"
+ruby "2.1.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -24,7 +16,25 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :assets do
+    gem 'sass-rails', '~> 4.0.3'
+    gem 'coffee-rails', '~> 4.0.0'
+    gem 'uglifier', '>= 1.3.0'
+end
+
+group :development do
+    gem 'spring'
+    gem 'quiet_assets'
+    gem 'pry-rails'
+    gem 'looksee'
+    gem 'awesome_print'
+    gem "better_errors"
+    gem "binding_of_caller"
+    gem 'hirb'
+end
+
+gem 'rails_config'
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
@@ -38,4 +48,7 @@ gem 'rails_12factor', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'chargebee'
 
+gem 'omniauth'
+gem 'omniauth-mindvalley', '>= 0.0.8', :git => 'git://github.com/mindvalley/omniauth-mindvalley.git'
