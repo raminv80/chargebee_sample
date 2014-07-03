@@ -1,0 +1,37 @@
+<h1>Subscription success</h1>
+<h3>Subscription info</h3>
+<ul>
+	<li><strong>ID</strong>: <%= @subscription.id %></li>
+	<li><strong>Plan</strong>: <%= @subscription.plan_id.capitalize %></li>
+	<li><strong>Status</strong>: <%= @subscription.status %></li>
+	<li><strong>Starts at</strong>: <%= @subscription.current_term_start %></li>
+	<li><strong>Ends at</strong>: <%= @subscription.current_term_end %></li>
+	<li><strong>Activated at</strong>: <%= @subscription.activated_at %></li>
+	<li><strong>Due invoices count</strong>: <%= @subscription.due_invoices_count %></li>
+</ul>
+
+<h3>Customer info</h3>
+<ul>
+	<li><strong>ID</strong>: <%= @customer.id %></li>
+	<li><strong>Name</strong>: <%= "#{@customer.first_name} #{@customer.last_name}" %></li>
+	<li><strong>Email</strong>: <%= @customer.email %></li>
+	<li><strong>Allow auto collection</strong>: <%= @customer.auto_collection %></li>
+	<li><strong>Card status</strong>: <%= @customer.card_status %></li>
+	<li><strong>Billing Address</strong>
+		<ul>
+			<li><strong>Name</strong>: <%= "#{@customer.billing_address.first_name} #{@customer.billing_address.last_name}" %></li>
+			<li><strong>Phone</strong>: <%= @customer.billing_address.phone %></li>
+		</ul>
+	</li>
+</ul>
+
+<h3>Card info</h3>
+<ul>
+	<li><strong>Status</strong>: <%= @card.status %></li>
+	<li><strong>Name</strong>: <%= "#{@card.first_name} #{@card.last_name}" %></li>
+	<li><strong>Number</strong>: <%= @card.masked_number %></li>
+	<li><strong>Type</strong>: <%= @card.card_type %></li>
+	<li><strong>Expiry year</strong>: <%= @card.expiry_year %></li>
+	<li><strong>Expiry month</strong>: <%= @card.expiry_month %></li>
+	<li><strong>Gateway</strong>: <%= @card.gateway %></li>
+</ul>

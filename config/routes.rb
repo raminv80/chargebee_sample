@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'subscription/success'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,6 +11,10 @@ Rails.application.routes.draw do
   get "logout"  => "sessions#destroy",    :as => "logout"
   get "signup"  => "users#new",           :as => "signup"
   get '/auth/mindvalley/callback', to: 'sessions#create'
+  
+  resource 'subscription' do
+    get '/success', to: 'subscription#success'
+  end
 
   namespace :api do
     namespace :v1 do
