@@ -1,8 +1,8 @@
 mindvalley:
   accounts:
     api:      http://accounts.mvstg.com/
-    key:      fSbol7pAPrCM4qgEmrbfWqGZCwYr7SY0i0XSmxmf
-    secret:   MndRL5ey7csovPpsIc2ddiQNBb3GcnQucW4D2cHE
+    key:      dr6PkK1xOxwT2a70cZcDJFZjVefR1UHQxyFcJcB1
+    secret:   YHfpOzqI6Lmcg4rXYQDdlrFR2nF0Bk4q6xaEc784
   chargebee:
     #define a shared secret for webhook security
     shared_secret: 'testchargebe3'
