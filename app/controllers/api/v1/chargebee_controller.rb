@@ -26,7 +26,6 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	end
 
 	def log_event(event)
-		binding.pry
 		log = ChargebeeEvent.new
 		log.event_id = event.id
 		log.occured_at = event.occurred_at
