@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "logout"  => "sessions#destroy",    :as => "logout"
   get "signup"  => "users#new",           :as => "signup"
   get '/auth/mindvalley/callback', to: 'sessions#create'
-  
+
   resource 'subscription' do
     get '/success', to: 'subscription#success'
   end
@@ -22,6 +22,11 @@ Rails.application.routes.draw do
         post '/:secret', to: 'chargebee#event_listener', defaults: {format: 'json'}
       end
     end
+  end
+
+  namespace :admin do
+    resources 'events'
+    resources 'subscriptions'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

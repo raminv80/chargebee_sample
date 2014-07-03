@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>user_id</th>
+      <th>subscription_id</th>
+      <th>customer_id</th>
+      <th>created_at</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @subscriptions.each do |subscription| %>
+  <tr>
+    <td><%=subscription.user_id%></td>
+    <td><%=subscription.subscription_id%></td>
+    <td><%=subscription.customer_id%></td>
+    <td><%=subscription.created_at%></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

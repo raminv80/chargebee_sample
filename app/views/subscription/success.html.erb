@@ -4,9 +4,9 @@
 	<li><strong>ID</strong>: <%= @subscription.id %></li>
 	<li><strong>Plan</strong>: <%= @subscription.plan_id.capitalize %></li>
 	<li><strong>Status</strong>: <%= @subscription.status %></li>
-	<li><strong>Starts at</strong>: <%= @subscription.current_term_start %></li>
-	<li><strong>Ends at</strong>: <%= @subscription.current_term_end %></li>
-	<li><strong>Activated at</strong>: <%= @subscription.activated_at %></li>
+	<li><strong>Starts at</strong>: <%= localize(Time.at(@subscription.current_term_start), :format => :long) %></li>
+	<li><strong>Ends at</strong>: <%= localize(Time.at(@subscription.current_term_end), :format => :long) %></li>
+	<li><strong>Activated at</strong>: <%= localize(Time.at(@subscription.activated_at), :format => :long) %></li>
 	<li><strong>Due invoices count</strong>: <%= @subscription.due_invoices_count %></li>
 </ul>
 
