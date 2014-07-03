@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources 'events'
+    resources 'chargebee_events'
     resources 'subscriptions'
   end
   # Example of regular route:
