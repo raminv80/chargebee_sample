@@ -26,7 +26,7 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	end
 
 	def log_event(event)
-		log = Event.new
+		log = ChargebeeEvents.new
 		log.event_id = event.id
 		log.occured_at = event.occurred_at
 		log.source = event.source
