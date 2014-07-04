@@ -10,21 +10,24 @@ class WelcomeController < ApplicationController
     # For demo purpose plan with id 'basic' is hard coded here.
     if(!session[:user_id].nil?)
       user = User.find(session[:user_id])
-      responseResult = ChargeBee::HostedPage.checkout_new({
-        :subscription => {:plan_id=>"basic" }, 
-        :customer => {
-          :email => user.email, 
-          :first_name => user.first_name, 
-          :last_name => user.last_name, 
-        },
-        :billing_address => {
-          :first_name => user.first_name, 
-          :last_name => user.last_name, 
-        },
-        :embed => false
-      })
+      @subscriptions = Subscription.where(user_id: user.id)
+      if(@subscriptions.empty?)
+        responseResult = ChargeBee::HostedPage.checkout_new({
+          :subscription => {:plan_id=>"basic" }, 
+          :customer => {
+            :email => user.email, 
+            :first_name => user.first_name, 
+            :last_name => user.last_name, 
+          },
+          :billing_address => {
+            :first_name => user.first_name, 
+            :last_name => user.last_name, 
+          },
+          :embed => false
+        })
 
-      @basicPageUrl = responseResult.hosted_page.url
+        @basicPageUrl = responseResult.hosted_page.url
+      end
     end
    
     render 'index'
