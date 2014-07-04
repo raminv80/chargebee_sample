@@ -40,6 +40,22 @@ class WelcomeController < ApplicationController
         })
 
         @basicPageUrl = responseResult.hosted_page.url
+
+        responseResult = ChargeBee::HostedPage.checkout_new({
+          :subscription => {:plan_id=>"basic" }, 
+          :customer => {
+            :email => user.email, 
+            :first_name => user.first_name, 
+            :last_name => user.last_name, 
+          },
+          :billing_address => {
+            :first_name => user.first_name, 
+            :last_name => user.last_name, 
+          },
+          :embed => true
+        })
+
+        @basicPageUrlEmbeded = responseResult.hosted_page.url
       end
     end
    

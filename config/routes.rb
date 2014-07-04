@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resource 'subscription' do
     get '/success', to: 'subscription#success'
+    get '/embeded_checkout', to: 'subscription#embeded_checkout'
   end
 
   namespace :api do

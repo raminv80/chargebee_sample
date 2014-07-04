@@ -34,6 +34,34 @@ class SubscriptionController < ApplicationController
 
   end
 
+  def embeded_checkout
+    if(!session[:user_id].nil?)
+      user = User.find(session[:user_id])
+      
+      subscriptions = Subscription.where(user_id: user.id)
+      if !subscriptions.empty?
+        redirect "/400"
+      end
+
+      responseResult = ChargeBee::HostedPage.checkout_new({
+        :subscription => {:plan_id=>"basic" }, 
+        :customer => {
+          :email => user.email, 
+          :first_name => user.first_name, 
+          :last_name => user.last_name, 
+        },
+        :billing_address => {
+          :first_name => user.first_name, 
+          :last_name => user.last_name, 
+        },
+        :embed => true
+      })
+
+      @basicPageUrlEmbeded = responseResult.hosted_page.url
+    end
+
+  end
+
   private
 
   def login_to_chargebee

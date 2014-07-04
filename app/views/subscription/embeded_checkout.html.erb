@@ -1,0 +1,15 @@
+<h2>Hello World</h2>
+<p>
+  The time is now: <%= Time.now %>
+  <% if session[:user_id].nil? %>
+  <a href="/auth/mindvalley">Login here</a>
+  <% else %>
+  <%=link_to logout_path, 'logout' %>
+  <% end %>
+</p>
+<h3>Checkout embeded page</h3>
+  
+  <% if !@basicPageUrlEmbeded.nil? %>
+  <p>Subscribe to this app!</p>
+  <iframe src="<%= @basicPageUrlEmbeded %>" width="600" height="800" ></iframe>
+  <% end %>
