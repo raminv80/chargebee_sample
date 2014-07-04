@@ -12,10 +12,10 @@
   <% @events.each do |event| %>
   <tr>
     <td><%=event.event_id%></td>
-    <td><%=event.cource%></td>
-    <td><%=event.type%></td>
+    <td><%=event.event_source%></td>
+    <td><%=event.event_type%></td>
     <td><%=event.created_at%></td>
-    <td><%=event.data%></td>
+    <td><%=event.event_data%></td>
   </tr>
   <% end %>
   </tbody>
