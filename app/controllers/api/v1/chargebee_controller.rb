@@ -9,9 +9,9 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 
 		case event.event_type
 		when "invoice_created"
-			invoice_obj = event.content.invoice
+			#invoice_obj = event.content.invoice
 		when "subscription_created"
-			handle_subscription(event)
+			#handle_subscription(event)
 		end
 
 		expose 'success'
@@ -20,6 +20,7 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	private
 
 	def handle_subscription(event)
+		#event based subscription downside is the delay of event propagation
 		subscription_id = event.content.subscription.id
 		customer_id = event.content.customer.id
 		email = event.content.customer.email
