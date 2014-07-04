@@ -41,10 +41,10 @@ class SubscriptionController < ApplicationController
   		:api_key => Settings[:mindvalley][:chargebee][:api_key])
   end
 
-  def handle_subscription(subscription)
-    subscription_id = subscription.id
-    customer_id = customer.id
-    email = customer.email
+  def handle_subscription(result)
+    subscription_id = result.subscription.id
+    customer_id = result.customer.id
+    email = result.customer.email
     Subscription.find_or_create_subscription(email, subscription_id, customer_id)
   end
 end
