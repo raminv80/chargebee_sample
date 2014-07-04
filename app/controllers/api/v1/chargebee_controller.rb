@@ -22,7 +22,7 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	def handle_subscription(event)
 		subscription_id = event.content.subscription.id
 		customer_id = event.content.customer.id
-		Subscriber.find_or_create_subscription(session[:user_id], subscription_id, customer_id)
+		Subscription.find_or_create_subscription(session[:user_id], subscription_id, customer_id)
 	end
 
 	def log_event(event)
