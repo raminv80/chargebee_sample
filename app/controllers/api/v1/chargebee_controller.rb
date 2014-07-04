@@ -1,6 +1,5 @@
 class Api::V1::ChargebeeController < Api::V1::ApiController
 	def event_listener
-		binding.pry
 		# Getting the json content from the request.
 		body = request.body.string
 		# Assigning the recieved content to ChargeBee Event object.
