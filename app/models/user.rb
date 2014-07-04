@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
     begin
       user = User.find_or_initialize_by(account_id: hash["id"])
       user.attributes = {
-        email: hash['email']
+        email: hash['email'],
+        first_name: hash['info']['first_name'],
+        last_name: hash['info']['last_name'],
       }
       user
     rescue => e
