@@ -7,5 +7,5 @@ mindvalley:
     #define a shared secret for webhook security
     shared_secret: 'testchargebe3'
     #get from chargebee site
-    SITE: "mindvalleytest-test"
-    API_KEY: "test_BKgZWuZFIz5np9D8HBucukFIfsAv8OTAn"
+    site: "mindvalleytest-test"
+    api_key: "test_BKgZWuZFIz5np9D8HBucukFIfsAv8OTAn"
