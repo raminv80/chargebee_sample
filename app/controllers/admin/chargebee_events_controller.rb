@@ -3,7 +3,7 @@ class Admin::ChargebeeEventsController < ApplicationController
   #before_action :login_to_chargebee
 
   def index
-  	@events = ChargebeeEvent.all
+  	@events = CbEvent.all
   end
 
   private
