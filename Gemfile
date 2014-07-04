@@ -21,11 +21,10 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
 end
-
+gem 'pry-rails'
 group :development do
   gem 'spring'
   gem 'quiet_assets'
-  gem 'pry-rails'
   gem 'looksee'
   gem 'awesome_print'
   gem "better_errors"
