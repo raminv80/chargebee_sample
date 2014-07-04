@@ -28,10 +28,10 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	def log_event(event)
 		log = CbEvent.new
 		log.event_id = event.id
-		log.occured_at = event.occurred_at
-		log.source = event.source
-		log.type = event.event_type
-		log.data = event.to_s
+		log.evet_occured_at = event.occurred_at
+		log.event_source = event.source
+		log.event_type = event.event_type
+		log.event_data = event.to_s
 		log.save
 	end
 
