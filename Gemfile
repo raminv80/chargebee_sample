@@ -22,7 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
-group :development, :production do
+group :development, :test do
   gem 'pry-rails'
   gem 'spring'
   gem 'quiet_assets'

@@ -1,5 +1,6 @@
 class Api::V1::ChargebeeController < Api::V1::ApiController
 	def event_listener
+		binding.pry
 		# Getting the json content from the request.
 		body = request.body.string
 		# Assigning the recieved content to ChargeBee Event object.
@@ -28,9 +29,9 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	def log_event(event)
 		log = CbEvent.new
 		log.event_id = event.id
-		log.event_occured_at = event.occurred_at
-		log.event_source = event.source
-		log.event_type = event.event_type
+		# log.event_occured_at = event.occurred_at
+		# log.event_source = event.source
+		# log.event_type = event.event_type
 		log.event_data = event.to_s
 		log.save
 	end
