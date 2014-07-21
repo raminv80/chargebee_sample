@@ -62,6 +62,26 @@ class SubscriptionController < ApplicationController
 
   end
 
+  def customer_portal
+    redirect "/400" if session[:user_id].nil?
+    user = User.find(session[:user_id])
+    
+    subscriptions = Subscription.where(user_id: user.id, customer_id: params[:customer_id])
+
+    redirect "/400" if subscriptions.empty?
+    
+    result = ChargeBee::PortalSession.create({
+      :redirect_url => "http://chargbee.herokuapp.com/", 
+      :customer => {
+        :id => subscriptions.first.customer_id
+      }
+    })
+    portal_session = result.portal_session
+    session[:portal_session] = portal_session
+
+    redirect portal_session[:access_url]
+  end
+
   private
 
   def login_to_chargebee

@@ -37,6 +37,10 @@ group :test, :development do
     gem 'rspec-rails', '~> 3.0.0'
 end
 
+group :development do
+  gem 'rb-readline'
+end
+
 gem 'rails_config'
 
 gem 'rails_12factor', group: :production

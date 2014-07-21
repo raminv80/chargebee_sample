@@ -22,7 +22,7 @@
     <p>You are subscribd to following plans:</p>
     <ul>
       <% @subscriptions.each do |subscription| %>
-      <li><strong>Plan name</strong>: <%= subscription[:subscription].plan_id.capitalize %></li>
+      <li><strong>Plan name</strong>: <%= subscription[:subscription].plan_id.capitalize %> (<%= link_to 'customer portal', portal_subscription_path %>)</li>
       <% end %>
     </ul>
   <% end %>
