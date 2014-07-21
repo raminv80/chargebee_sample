@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resource 'subscription' do
     get '/success', to: 'subscription#success'
     get '/embeded_checkout', to: 'subscription#embeded_checkout'
-    get '/customer_portal/:customer_id', to: 'subscription#customer_portal', as: "portal_subscription"
+    get '/customer_portal/:customer_id', to: 'subscription#customer_portal', as: "portal"
   end
 
   namespace :api do
