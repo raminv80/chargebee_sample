@@ -79,7 +79,7 @@ class SubscriptionController < ApplicationController
     portal_session = result.portal_session
     session[:portal_session] = portal_session
 
-    redirect_to portal_session[:access_url]
+    redirect_to portal_session.access_url
   end
 
   private
