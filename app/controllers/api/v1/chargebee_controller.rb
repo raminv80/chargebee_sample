@@ -12,6 +12,8 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 			#invoice_obj = event.content.invoice
 		when "subscription_created"
 			#handle_subscription(event)
+		when "subscription_cancelled"
+			handle_unsubscription(event)
 		end
 
 		expose 'success'
@@ -20,6 +22,14 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 	private
 
 	def handle_subscription(event)
+		#event based subscription downside is the delay of event propagation
+		subscription_id = event.content.subscription.id
+		customer_id = event.content.customer.id
+		email = event.content.customer.email
+		Subscription.cancel_subscription(email, subscription_id, customer_id)
+	end
+
+	def handle_unsubscription(event)
 		#event based subscription downside is the delay of event propagation
 		subscription_id = event.content.subscription.id
 		customer_id = event.content.customer.id
