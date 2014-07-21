@@ -26,7 +26,7 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 		subscription_id = event.content.subscription.id
 		customer_id = event.content.customer.id
 		email = event.content.customer.email
-		Subscription.cancel_subscription(email, subscription_id, customer_id)
+		Subscription.find_or_create_subscription(email, subscription_id, customer_id)
 	end
 
 	def handle_unsubscription(event)
@@ -34,7 +34,7 @@ class Api::V1::ChargebeeController < Api::V1::ApiController
 		subscription_id = event.content.subscription.id
 		customer_id = event.content.customer.id
 		email = event.content.customer.email
-		Subscription.find_or_create_subscription(email, subscription_id, customer_id)
+		Subscription.cancel_subscription(email, subscription_id, customer_id)
 	end
 
 	def log_event(event)
