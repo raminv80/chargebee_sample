@@ -10,9 +10,16 @@
 <h3>Landing page info</h3>
   
   <% if !@basicPageUrl.nil? %>
+<<<<<<< HEAD
+  <p>Subscribe to this app!</p>
+  <ul>
+    <li><%= link_to 'Subscribe Now to Basic plan for as low as 0.10$ per month!', @basicPageUrl %></li>
+    <li><%= link_to 'Checkout using iframe!', embeded_checkout_subscription_path %></li>
+=======
   <p>Subscribe to awesome app!</p>
   <ul>
     <li><%= link_to 'Subscribe Now!', @basicPageUrl %></li>
+>>>>>>> a67080760e8757dfc4265ffaddb8b4f8768f866f
     <!--<li><a href="https://mindvalleytest-test.chargebee.com/hosted_pages/plans/basic">subscribe</a> to basic plan at 0.1$ per month!</li>-->
   </ul>
   <% end %>
@@ -21,7 +28,11 @@
     <p>You are subscribd to following plans:</p>
     <ul>
       <% @subscriptions.each do |subscription| %>
+<<<<<<< HEAD
       <li><strong>Plan name</strong>: <%= subscription[:subscription].plan_id.capitalize %> (<%= link_to 'customer portal', portal_subscription_path %>)</li>
+=======
+      <li><strong>Plan name</strong>: <%= subscription[:subscription].plan_id.capitalize %></li>
+>>>>>>> a67080760e8757dfc4265ffaddb8b4f8768f866f
       <% end %>
     </ul>
   <% end %>
